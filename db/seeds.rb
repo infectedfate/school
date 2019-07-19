@@ -7,41 +7,42 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 teachers = Teacher.create([
-  {name: "Tetya Klava", email: "klavaklava@nudeklava.com"}
+  {name: "Tetya Klava", email: "klavaklava@klava.com", password: "asdawawds", password_confirmation: "asdawawds"}
   ])
 
-groups = Group.new([
+groups = Group.create([
   {character: "A", number: 1}
   ])
 
-students = Student.new([
+students = Student.create([
   {name: "Vasya Pupkin", email: "pupkin@vasya.ru", parent_name: "Papa Vasi", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Lena Golovach", email: "lena@lena.ru", parent_name: "Papa Lenki", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Petia Petin", email: "p@lena.ru", parent_name: "Papa Petki", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Sahsa Sashin", email: "s@lena.ru", parent_name: "Papa Saski", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Kirill Kirillov", email: "k@mail.ru", parent_name: "Papa Kirki", group_id: groups[0].id, teacher_id: teachers[0].id}
+  {name: "Lena Lena", email: "lena@lena.ru", parent_name: "Papa", group_id: groups[0].id, teacher_id: teachers[0].id},
+  {name: "Petia Petin", email: "p@mail.ru", parent_name: "Papa", group_id: groups[0].id, teacher_id: teachers[0].id},
+  {name: "Sahsa Sashin", email: "s@mail.ru", parent_name: "Mama", group_id: groups[0].id, teacher_id: teachers[0].id},
+  {name: "Kirill Kirillov", email: "k@mail.ru", parent_name: "Papa", group_id: groups[0].id, teacher_id: teachers[0].id}
   ])
-subjects = Subject.new([
-  {name: "math", perfomance_id: perfomances[0].id},
-  {name: "russian", perfomance_id: perfomances[0].id},
-  {name: "english", perfomance_id: perfomances[0].id},
-  {name: "programming", perfomance_id: perfomances[0].id},
-  {name: "world", perfomance_id: perfomances[0].id}
-  ])
-perfomances = Perfomance.new([
-  {student_id: students[0].id, mark: 3},
-  {student_id: students[0].id, mark: 3},
-  {student_id: students[0].id, mark: 3},
-  {student_id: students[1].id, mark: 5},
-  {student_id: students[1].id, mark: 5},
-  {student_id: students[1].id, mark: 5},
-  {student_id: students[2].id, mark: 4},
-  {student_id: students[2].id, mark: 4},
-  {student_id: students[2].id, mark: 4},
-  {student_id: students[3].id, mark: 2},
-  {student_id: students[3].id, mark: 3},
-  {student_id: students[3].id, mark: 2},
-  {student_id: students[4].id, mark: 3},
-  {student_id: students[4].id, mark: 3},
-  {student_id: students[4].id, mark: 2}
+
+subjects = Subject.create([
+  {name: "math"},
+  {name: "russian"},
+  {name: "english"},
+  {name: "programming"},
+  {name: "world"}
+])
+perfomances = Perfomance.create([
+  {student_id: students[0].id, mark: 3, subject_id: subjects[0].id},
+  {student_id: students[0].id, mark: 3, subject_id: subjects[2].id},
+  {student_id: students[0].id, mark: 3, subject_id: subjects[0].id},
+  {student_id: students[1].id, mark: 5, subject_id: subjects[2].id},
+  {student_id: students[1].id, mark: 5, subject_id: subjects[1].id},
+  {student_id: students[1].id, mark: 5, subject_id: subjects[3].id},
+  {student_id: students[2].id, mark: 4, subject_id: subjects[4].id},
+  {student_id: students[2].id, mark: 4, subject_id: subjects[0].id},
+  {student_id: students[2].id, mark: 4, subject_id: subjects[1].id},
+  {student_id: students[3].id, mark: 2, subject_id: subjects[2].id},
+  {student_id: students[3].id, mark: 3, subject_id: subjects[0].id},
+  {student_id: students[3].id, mark: 2, subject_id: subjects[3].id},
+  {student_id: students[4].id, mark: 3, subject_id: subjects[4].id},
+  {student_id: students[4].id, mark: 3, subject_id: subjects[1].id},
+  {student_id: students[4].id, mark: 2, subject_id: subjects[0].id}
   ])

@@ -1,3 +1,3 @@
 class Subject < ApplicationRecord
-  belongs_to :perfomance
+  has_many :perfomances
 end
