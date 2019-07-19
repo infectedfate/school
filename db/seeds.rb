@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 teachers = Teacher.create([
-  {name: "Tetya Klava", email: "klavaklava@klava.com", password: "asdawawds", password_confirmation: "asdawawds"}
+  {name: "Petr Aleksandrovich", email: "klavaklava@klava.com", password: "asdawawds", password_confirmation: "asdawawds"}
   ])
 
 groups = Group.create([
