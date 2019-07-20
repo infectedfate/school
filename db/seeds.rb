@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+SUBJECTS = %w[math, programming, world, russian, english]
+
 teachers = Teacher.create([
   {name: "Petr Aleksandrovich", email: "klavaklava@klava.com", password: "asdawawds", password_confirmation: "asdawawds"}
   ])
@@ -15,34 +17,19 @@ groups = Group.create([
   ])
 
 students = Student.create([
-  {name: "Vasya Pupkin", email: "pupkin@vasya.ru", parent_name: "Papa Vasi", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Lena Lena", email: "lena@lena.ru", parent_name: "Papa", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Petia Petin", email: "p@mail.ru", parent_name: "Papa", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Sahsa Sashin", email: "s@mail.ru", parent_name: "Mama", group_id: groups[0].id, teacher_id: teachers[0].id},
-  {name: "Kirill Kirillov", email: "k@mail.ru", parent_name: "Papa", group_id: groups[0].id, teacher_id: teachers[0].id}
+  {name: "Vasya Pupkin", email: "pupkin@vasya.ru", parent_name: "Papa Vasi", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Lena Lena", email: "lena@lena.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Petia Petin", email: "p@mail.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Sahsa Sashin", email: "s@mail.ru", parent_name: "Mama", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Kirill Kirillov", email: "k@mail.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id}
   ])
 
-subjects = Subject.create([
-  {name: "math"},
-  {name: "russian"},
-  {name: "english"},
-  {name: "programming"},
-  {name: "world"}
-])
+subjects = SUBJECTS.each { |e| Subject.create(name: "e") }
+
 perfomances = Perfomance.create([
-  {student_id: students[0].id, mark: 3, subject_id: subjects[0].id},
-  {student_id: students[0].id, mark: 3, subject_id: subjects[2].id},
-  {student_id: students[0].id, mark: 3, subject_id: subjects[0].id},
-  {student_id: students[1].id, mark: 5, subject_id: subjects[2].id},
-  {student_id: students[1].id, mark: 5, subject_id: subjects[1].id},
-  {student_id: students[1].id, mark: 5, subject_id: subjects[3].id},
-  {student_id: students[2].id, mark: 4, subject_id: subjects[4].id},
-  {student_id: students[2].id, mark: 4, subject_id: subjects[0].id},
-  {student_id: students[2].id, mark: 4, subject_id: subjects[1].id},
-  {student_id: students[3].id, mark: 2, subject_id: subjects[2].id},
-  {student_id: students[3].id, mark: 3, subject_id: subjects[0].id},
-  {student_id: students[3].id, mark: 2, subject_id: subjects[3].id},
-  {student_id: students[4].id, mark: 3, subject_id: subjects[4].id},
-  {student_id: students[4].id, mark: 3, subject_id: subjects[1].id},
-  {student_id: students[4].id, mark: 2, subject_id: subjects[0].id}
+  {student_id: students.first.id, mark: 3, subject_id: subjects.first.id},
+  {student_id: students.first.id, mark: 3, subject_id: subjects.third.id},
+  {student_id: students.first.id, mark: 3, subject_id: subjects.first.id},
+  {student_id: students.second.id, mark: 5, subject_id: subjects.third.id},
+  {student_id: students.second.id, mark: 5, subject_id: subjects.second.id}
   ])
