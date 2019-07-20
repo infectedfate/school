@@ -17,19 +17,19 @@ groups = Group.create([
   ])
 
 students = Student.create([
-  {name: "Vasya Pupkin", email: "pupkin@vasya.ru", parent_name: "Papa Vasi", group_id: groups.first.id, teacher_id: teachers.first.id},
-  {name: "Lena Lena", email: "lena@lena.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id},
-  {name: "Petia Petin", email: "p@mail.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id},
-  {name: "Sahsa Sashin", email: "s@mail.ru", parent_name: "Mama", group_id: groups.first.id, teacher_id: teachers.first.id},
-  {name: "Kirill Kirillov", email: "k@mail.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id}
+  {name: "Vasya Pupkin", parent_email: "pupkin@vasya.ru", parent_name: "Papa Vasi", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Lena Lena", parent_email: "lena@lena.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Petia Petin", parent_email: "p@mail.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Sahsa Sashin", parent_email: "s@mail.ru", parent_name: "Mama", group_id: groups.first.id, teacher_id: teachers.first.id},
+  {name: "Kirill Kirillov", parent_email: "k@mail.ru", parent_name: "Papa", group_id: groups.first.id, teacher_id: teachers.first.id}
   ])
 
-subjects = SUBJECTS.each { |e| Subject.create(name: "e") }
+subjects = SUBJECTS.each { |e| Subject.create(name: e) }
 
 perfomances = Perfomance.create([
-  {student_id: students.first.id, mark: 3, subject_id: subjects.first.id},
-  {student_id: students.first.id, mark: 3, subject_id: subjects.third.id},
-  {student_id: students.first.id, mark: 3, subject_id: subjects.first.id},
-  {student_id: students.second.id, mark: 5, subject_id: subjects.third.id},
-  {student_id: students.second.id, mark: 5, subject_id: subjects.second.id}
+  {student_id: students.first.id, mark: 3, subject_id: Subject.first.id},
+  {student_id: students.first.id, mark: 3, subject_id: Subject.third.id},
+  {student_id: students.first.id, mark: 3, subject_id: Subject.first.id},
+  {student_id: students.second.id, mark: 5, subject_id: Subject.third.id},
+  {student_id: students.second.id, mark: 5, subject_id: Subject.second.id}
   ])
