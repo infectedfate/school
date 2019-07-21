@@ -1,0 +1,7 @@
+h1 Регистрация нового учителя
+.row.justify-content-center.mt-3
+  .col.col-md-4
+    .card.border-primary
+      .card-body
+        == render 'form'
+      = link_to 'back', teachers_path, class: "btn btn-primary"

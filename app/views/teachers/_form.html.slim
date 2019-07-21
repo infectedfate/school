@@ -1,0 +1,6 @@
+= bootstrap_form_with model: @teacher, local: true do |form|
+  = form.text_field :name, id: :teacher_name, class: "form-control"
+  = form.email_field :email, id: :teacher_email, class: "form-control"
+  = form.password_field :password, id: :teacher_password, class: "form-control"
+  = form.password_field :password_confirmation, id: :teacher_password_confirmation, class: "form-control"
+  = form.submit "Создать учителя"
