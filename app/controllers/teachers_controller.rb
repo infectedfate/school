@@ -1,5 +1,7 @@
 class TeachersController < ApplicationController
 
+  before_action :set_teacher, only: %i[show destroy update edit]
+
   def index
 
   end
@@ -16,11 +18,30 @@ class TeachersController < ApplicationController
 
   end
 
+  def create
+    @teacher = Teacher.create(teacher_params)
+
+    if @teacher.save
+      redirect_to teachers_path(@teacher)
+    else
+      render :new
+    end
+  end
+
   def show
-    @teacher = Teacher.find(params[:id])
   end
 
   def new
     @teacher = Teacher.new
+  end
+
+  private
+
+  def teacher_params
+      params.require(:teacher).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_teacher
+    @teacher = Teacher.find(params[:id])
   end
 end
