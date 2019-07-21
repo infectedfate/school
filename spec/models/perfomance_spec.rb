@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Perfomance, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @perfomance = Perfomance.new(student_id: 1, mark: 5, subject_id: 5)
+  end
+
+  subject { @perfomance }
 end

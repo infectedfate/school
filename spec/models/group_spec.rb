@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before do
+    @group = Group.new(character: "A", number: 1)
+  end
+
+  subject { @group }
+
+  it {should respond_to :character}
+  it {should respond_to :number}
 end
