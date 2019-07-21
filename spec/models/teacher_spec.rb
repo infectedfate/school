@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Teacher, type: :model do
 
   before do
-    @teacher = Teacher.new(name: "Example user", email: "examlpe@mail.com",
+    @teacher = Teacher.new(name: "Example", email: "examlpe@mail.com",
        password: "foobar", password_confirmation: "foobar")
   end
   subject { @teacher }
@@ -93,5 +93,5 @@ describe "return value of authenticate method" do
     specify { expect(teacher_for_invalid_password).to be false }
     end
   end
-  
+
 end
