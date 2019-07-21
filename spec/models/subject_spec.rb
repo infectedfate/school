@@ -15,7 +15,7 @@ RSpec.describe Subject, type: :model do
   end
 
   describe "when name is too long" do
-    before { @subject.name = "a"* 51 }
+    before { @subject.name = "a"* 15 }
     it { should_not be_valid }
   end
 
