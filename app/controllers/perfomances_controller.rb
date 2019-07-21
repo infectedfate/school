@@ -1,0 +1,2 @@
+class PerfomancesController < ApplicationController
+end
