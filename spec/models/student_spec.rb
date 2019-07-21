@@ -3,11 +3,7 @@ require 'rails_helper'
 RSpec.describe Student, type: :model do
 
   before do
-<<<<<<< HEAD
     @student = Student.new(name: "example name", parent_email: "example_mail@mail.ru", parent_name: "example parent",
-=======
-    @student = Student.new(name: "example name", parent_email: "ex@ex@mail.ru", parent_name: "example parent",
->>>>>>> 177b743b48561e453986bb831f06242a7884a505
     group_id: 1, teacher_id: 1)
   end
 
@@ -19,7 +15,6 @@ RSpec.describe Student, type: :model do
   it {should respond_to :group_id}
   it {should respond_to :teacher_id}
 
-<<<<<<< HEAD
   describe "when name is not present" do
     before { @subject.name = " " }
     it { should_not be_valid }
@@ -60,7 +55,4 @@ RSpec.describe Student, type: :model do
 
    it { should_not be_valid }
  end
-=======
-
->>>>>>> 177b743b48561e453986bb831f06242a7884a505
 end

@@ -6,7 +6,6 @@ RSpec.describe Perfomance, type: :model do
   end
 
   subject { @perfomance }
-<<<<<<< HEAD
 
   it {should respond_to :mark}
   it {should respond_to :student_id}
@@ -26,6 +25,4 @@ RSpec.describe Perfomance, type: :model do
     before { @perfomance.mark = 1 }
     it {should be_valid}
   end
-=======
->>>>>>> 177b743b48561e453986bb831f06242a7884a505
 end
