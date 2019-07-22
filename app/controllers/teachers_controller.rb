@@ -23,6 +23,7 @@ class TeachersController < ApplicationController
 
     if @teacher.save
       log_in @teacher
+      remember @teacher
       flash[:success] = "Welcome"
       redirect_to teachers_path(@teacher)
     else

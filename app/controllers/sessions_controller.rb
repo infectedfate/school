@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     teacher = Teacher.find_by(email: params[:session][:email].downcase)
     if teacher && teacher.authenticate(params[:session][:password])
       log_in teacher
+      params[:session][:remember_me] == '1' ? remember(teacher) : forget(teacher)
       redirect_to teacher
     else
     render :new
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 end
