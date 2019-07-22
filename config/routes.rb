@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
   resources :teachers do
     resources :students do
       resources :perfomances
@@ -8,4 +9,8 @@ Rails.application.routes.draw do
 
   resources :groups
   resources :subjects
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 end
