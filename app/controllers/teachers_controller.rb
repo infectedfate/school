@@ -22,6 +22,9 @@ class TeachersController < ApplicationController
     @teacher = Teacher.create(teacher_params)
 
     if @teacher.save
+      log_in @teacher
+      remember @teacher
+      flash[:success] = "Welcome"
       redirect_to teachers_path(@teacher)
     else
       render :new
