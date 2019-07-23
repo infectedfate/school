@@ -6,8 +6,8 @@ class Perfomance < ApplicationRecord
 
   # Показать среднюю оценку ученика по предмету
   def self.average_mark_for_subject(student_id, subject_id)
-    average_mark = Integer.new
-    marks = Array.new
+    average_mark = 0
+    marks = []
     Perfomance.where(student_id: student_id, subject_id: subject_id).each {|e| marks << e.mark}
     average_mark = marks.sum/marks.size.to_f
     puts average_mark
