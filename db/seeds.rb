@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-SUBJECTS = %w[math, programming, world, russian, english]
+SUBJECTS = %w[math programming world russian english]
 
 teachers = Teacher.create([
   {name: "Petr Aleksandrovich", email: "klavaklava@klava.com", password: "asdawawds", password_confirmation: "asdawawds"}
