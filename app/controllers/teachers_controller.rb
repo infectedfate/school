@@ -3,19 +3,22 @@ class TeachersController < ApplicationController
   before_action :set_teacher, only: %i[show destroy update edit]
 
   def index
-
   end
 
   def update
-
+    if @teacher.update(teacher_params)
+      redirect_to teachers_path(@teacher)
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @teacher.destroy
+    redirect_to teachers_path
   end
 
   def edit
-
   end
 
   def create
